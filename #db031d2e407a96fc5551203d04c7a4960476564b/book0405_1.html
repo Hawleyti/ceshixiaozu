@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./css/nav_0405.css">
+</head>
+<body>
+
+<div class="navigation">
+  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+</div>
+
+<div class="tontent">
+    <div id="London" class="navigation_content">
+        <h3>London</h3>
+        <p>London is the capital city of England.</p>
+      </div>
+      
+      <div id="Paris" class="navigation_content">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p> 
+      </div>
+      
+      <div id="Tokyo" class="navigation_content">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+      </div>
+</div>
+
+
+<script>
+function openCity(evt, cityName) {
+  var i, navigation_content, tablinks;
+  navigation_content = document.getElementsByClassName("navigation_content");
+  for (i = 0; i < navigation_content.length; i++) {
+    navigation_content[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html> 
